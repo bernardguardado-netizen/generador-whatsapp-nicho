@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Enlaces para WhatsApp | Gratis y Rápido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
+        <h1 class="text-2xl font-bold text-center text-green-600 mb-2">WhatsApp Link Generator</h1>
+        <p class="text-gray-500 text-center text-sm mb-6">Crea tu link personalizado para vender más.</p>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Tu número (con código de país)</label>
+                <input type="number" id="phone" placeholder="Ej: 5215512345678" 
+                    class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Mensaje predeterminado (Opcional)</label>
+                <textarea id="message" rows="3" placeholder="Hola! Quiero más información..." 
+                    class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+            </div>
+
+            <button onclick="generateLink()" 
+                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg transition duration-300">
+                Generar mi Enlace
+            </button>
+
+            <div id="result-container" class="hidden mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                <p class="text-xs font-semibold text-green-700 uppercase mb-2">¡Tu link está listo!</p>
+                <input type="text" id="final-link" readonly 
+                    class="w-full p-2 bg-white border border-green-300 rounded text-sm text-gray-600 mb-3">
+                <button onclick="copyToClipboard()" 
+                    class="w-full bg-white border border-green-500 text-green-600 font-semibold py-2 rounded hover:bg-green-500 hover:text-white transition">
+                    Copiar Enlace
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateLink() {
+            const phone = document.getElementById('phone').value;
+            const message = encodeURIComponent(document.getElementById('message').value);
+            
+            if (!phone) {
+                alert("Por favor, ingresa un número de teléfono.");
+                return;
+            }
+
+            const url = `https://wa.me/${phone}?text=${message}`;
+            document.getElementById('final-link').value = url;
+            document.getElementById('result-container').classList.remove('hidden');
+        }
+
+        function copyToClipboard() {
+            const copyText = document.getElementById("final-link");
+            copyText.select();
+            document.execCommand("copy");
+            alert("¡Copiado al portapapeles!");
+        }
+    </script>
+</body>
+</html>
