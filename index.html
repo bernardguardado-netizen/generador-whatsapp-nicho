@@ -2,25 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Link de WhatsApp con Mensaje Personalizado | Gratis y Rápido</title>
-<meta name="description" content="Genera tu link de WhatsApp personalizado y código QR gratis. La herramienta más rápida para vender por WhatsApp sin guardar contactos.">
-<meta name="keywords" content="crear link whatsapp, generador enlace whatsapp, wa.me, link whatsapp con mensaje, código qr whatsapp">
-
-<meta property="og:title" content="Generador de Enlaces para WhatsApp Pro">
-<meta property="og:description" content="Crea tu enlace directo y código QR en segundos. Ideal para ventas y negocios.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://crearlinkwa.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Links WhatsApp Pro | Gratis</title>
+    
+    <title>Crear Link de WhatsApp y Código QR | Gratis y Rápido</title>
+    <meta name="description" content="Genera tu link de WhatsApp personalizado y código QR gratis en segundos. La herramienta ideal para ventas y emprendedores. Sin registros.">
+    <meta name="keywords" content="crear link whatsapp, generador enlace whatsapp, wa.me, link whatsapp con mensaje, código qr whatsapp gratis">
+
+    <meta property="og:title" content="Generador de Enlaces para WhatsApp Pro">
+    <meta property="og:description" content="Crea tu enlace directo y código QR para vender más por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://generador-whatsapp-nicho.vercel.app/">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        .animate-fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body class="bg-[#f0f2f5] min-h-screen font-sans">
 
-    <nav class="bg-white p-4 shadow-sm mb-8">
+    <nav class="bg-white p-4 shadow-sm mb-6">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <span class="text-[#25D366] font-bold text-xl flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                 </svg>
                 WaLink Pro
@@ -28,30 +34,27 @@
         </div>
     </nav>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+    <main class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
         
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Genera tu link</h2>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 h-fit">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Genera tu link gratis</h2>
             
             <div class="space-y-6">
                 <div>
-                    <label class="block text-sm font-semibold text-gray-600 mb-2">Número de teléfono</label>
-                    <div class="flex gap-2">
-                        <input type="text" value="+52" class="w-16 p-3 bg-gray-50 border border-gray-300 rounded-lg text-center font-bold" disabled>
-                        <input type="number" id="phone" placeholder="55 1234 5678" 
-                            class="flex-1 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#25D366] outline-none">
-                    </div>
+                    <label class="block text-sm font-semibold text-gray-600 mb-2">Número con código de país</label>
+                    <input type="number" id="phone" placeholder="Ej: 5215512345678" 
+                        class="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#25D366] outline-none transition">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold text-gray-600 mb-2">Mensaje personalizado</label>
-                    <textarea id="message" rows="4" placeholder="Hola, quiero información sobre..." 
+                    <label class="block text-sm font-semibold text-gray-600 mb-2">Mensaje (opcional)</label>
+                    <textarea id="message" rows="3" placeholder="Hola, quiero más información..." 
                         class="w-full p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#25D366] outline-none"></textarea>
                 </div>
 
                 <button onclick="generateAll()" 
-                    class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl transition-all shadow-md">
-                    Generar Link de WhatsApp
+                    class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl transition-all shadow-md active:scale-95">
+                    GENERAR AHORA
                 </button>
             </div>
         </div>
@@ -59,49 +62,86 @@
         <div class="flex flex-col gap-6">
             <div id="result-container" class="hidden bg-white p-8 rounded-2xl shadow-sm border border-gray-200 animate-fade-in">
                 <div class="mb-6">
-                    <p class="text-sm font-bold text-gray-400 uppercase mb-2">Tu link está listo</p>
+                    <p class="text-xs font-bold text-gray-400 uppercase mb-2">Enlace Directo</p>
                     <div class="flex gap-2">
-                        <input type="text" id="final-link" readonly class="flex-1 p-2 bg-gray-100 rounded border text-sm overflow-hidden">
-                        <button onclick="copyToClipboard()" class="bg-blue-50 text-blue-600 px-4 py-2 rounded font-bold text-sm hover:bg-blue-100 transition">Copiar</button>
+                        <input type="text" id="final-link" readonly class="flex-1 p-2 bg-gray-50 border rounded text-sm text-gray-500">
+                        <button onclick="copyToClipboard()" class="bg-green-100 text-green-700 px-4 py-2 rounded font-bold text-sm hover:bg-green-200">Copiar</button>
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center border-t pt-6">
-                    <p class="text-sm font-bold text-gray-400 uppercase mb-4 text-center">Código QR de tu link</p>
-                    <div id="qrcode" class="p-4 bg-white border border-gray-100 rounded-xl shadow-inner"></div>
+                    <p class="text-xs font-bold text-gray-400 uppercase mb-4">Código QR Generado</p>
+                    <div id="qrcode" class="p-3 bg-white border rounded-xl shadow-sm"></div>
                 </div>
             </div>
 
-            <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                <h3 class="text-blue-800 font-bold mb-2 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.308.533.19 0 .452-.084.826-.313.034.204-.055.408-.232.563-.311.27-.743.404-1.29.404-.737 0-1.139-.367-1.021-1.106l1-4.705c.068-.334-.027-.533-.306-.533-.19 0-.451.084-.824.313L6.333 6.9c.035-.204.124-.408.302-.563.311-.27.742-.404 1.288-.404.738 0 1.14.368 1.011 1.106z"/></svg>
-                    ¿Cómo funciona?
-                </h3>
-                <p class="text-blue-700 text-sm">Tu número se convierte en un enlace <strong>wa.me</strong>. Cuando alguien hace clic, se abre WhatsApp con tu mensaje listo para enviar.</p>
+            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <h3 class="font-bold text-gray-800 mb-3 uppercase text-xs tracking-wider">¿Por qué usar WaLink Pro?</h3>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li class="flex items-center gap-2">✅ Sin necesidad de guardar contactos.</li>
+                    <li class="flex items-center gap-2">✅ Mejora la tasa de conversión en ventas.</li>
+                    <li class="flex items-center gap-2">✅ Código QR listo para imprimir.</li>
+                    <li class="flex items-center gap-2">✅ 100% privado y seguro.</li>
+                </ul>
             </div>
         </div>
-    </div>
+    </main>
+
+    <section class="max-w-5xl mx-auto p-4 mt-8">
+        <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Preguntas Frecuentes</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-6 rounded-xl border border-gray-100">
+                <h4 class="font-bold text-[#128C7E] mb-2">¿Cómo crear un link de WhatsApp?</h4>
+                <p class="text-gray-600 text-sm">Solo ingresa tu número con el código de país y el mensaje que deseas recibir. Nuestra herramienta genera un enlace corto <strong>wa.me</strong> al instante.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-100">
+                <h4 class="font-bold text-[#128C7E] mb-2">¿El servicio tiene algún costo?</h4>
+                <p class="text-gray-600 text-sm">No, puedes generar todos los links y códigos QR que necesites de forma gratuita para tu negocio.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-12 py-8 bg-gray-50 border-t border-gray-200 text-center">
+        <p class="text-gray-400 text-xs mb-2 italic">Esta herramienta no está afiliada oficialmente con WhatsApp Inc.</p>
+        <button onclick="alert('Tu privacidad es importante. No almacenamos teléfonos ni mensajes. Los datos se procesan localmente en tu navegador.')" class="text-gray-500 text-xs hover:underline">
+            Política de Privacidad
+        </button>
+    </footer>
 
     <script>
-        let qrcode = null;
         function generateAll() {
             const phone = document.getElementById('phone').value;
             const message = encodeURIComponent(document.getElementById('message').value);
-            if (!phone) { alert("Ingresa un número"); return; }
-            const url = `https://wa.me/52${phone}?text=${message}`;
+            
+            if (!phone) {
+                alert("Por favor, ingresa tu número con código de país.");
+                return;
+            }
+
+            const url = `https://wa.me/${phone}?text=${message}`;
+            
+            // Mostrar Link
             document.getElementById('final-link').value = url;
             document.getElementById('result-container').classList.remove('hidden');
+
+            // Generar QR
             const qrContainer = document.getElementById("qrcode");
             qrContainer.innerHTML = "";
-            new QRCode(qrContainer, { text: url, width: 150, height: 150 });
+            new QRCode(qrContainer, {
+                text: url,
+                width: 160,
+                height: 160,
+                colorDark : "#000000",
+                colorLight : "#ffffff"
+            });
         }
+
         function copyToClipboard() {
             const copyText = document.getElementById("final-link");
             copyText.select();
             navigator.clipboard.writeText(copyText.value);
-            alert("Link copiado con éxito!");
+            alert("¡Copiado al portapapeles!");
         }
     </script>
 </body>
 </html>
-
